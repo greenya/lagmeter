@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Addon Author="greenya" APIVersion="15" Name="LagMeter" Description="Displays latency graph">
+    <Script Name="LagMeter.lua" />
+    <Script Name="lib/Points.lua" />
+    <Script Name="lib/Pixie.lua" />
+    <Form Name="LagMeter.xml" />
+</Addon>

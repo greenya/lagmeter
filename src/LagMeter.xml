@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Forms>
+
+    <Form Class="Window" Name="MainForm" RelativeToClient="1" SwallowMouseClicks="1" Moveable="1" Escapable="0" Overlapped="1">
+        <Event Name="WindowMove" Function="OnWindowMove" />
+    </Form>
+
+    <Form Class="Window" Name="SettingsForm" Moveable="1" Escapable="1" Overlapped="1" Visible="0"
+        SwallowMouseClicks="1" InterruptControl="1" RelativeToClient="1"
+        LAnchorPoint=".2" LAnchorOffset="-200"
+        TAnchorPoint=".4" TAnchorOffset="-200"
+        RAnchorPoint=".2" RAnchorOffset="200"
+        BAnchorPoint=".4" BAnchorOffset="236">
+
+        <Control Class="Window" Template="Holo_Background_General" Picture="1" RelativeToClient="1"
+            LAnchorPoint="0" LAnchorOffset="24"
+            TAnchorPoint="0" TAnchorOffset="70"
+            RAnchorPoint="1" RAnchorOffset="-25"
+            BAnchorPoint="1" BAnchorOffset="-19" />
+
+        <Control Class="Window" Sprite="BK3:UI_BK3_Holo_InsetHeaderThin"
+            Picture="1" IgnoreMouse="1" RelativeToClient="1" NewControlDepth="3"
+            LAnchorPoint="0" LAnchorOffset="36"
+            TAnchorPoint="0" TAnchorOffset="82"
+            RAnchorPoint="1" RAnchorOffset="-36"
+            BAnchorPoint="0" BAnchorOffset="186">
+
+            <Control Class="Window" Text="Interval" Font="CRB_Header11"
+                 TextColor="UI_TextHoloTitle" DT_CENTER="0" DT_VCENTER="1" RelativeToClient="1"
+                 LAnchorPoint="0" LAnchorOffset="10"
+                 TAnchorPoint="0" TAnchorOffset="4"
+                 RAnchorPoint="1" RAnchorOffset="0"
+                 BAnchorPoint="0" BAnchorOffset="34" />
+
+            <Control Class="Window" Name="IntervalValue" Font="CRB_Header11"
+                TextColor="UI_TextHoloTitle" DT_RIGHT="1" DT_VCENTER="1" RelativeToClient="1"
+                LAnchorPoint="0.5" LAnchorOffset="0"
+                TAnchorPoint="0" TAnchorOffset="4"
+                RAnchorPoint="1" RAnchorOffset="-10"
+                BAnchorPoint="0" BAnchorOffset="34" />
+
+            <Control Class="Window" Text="How often check latency and update graph."
+                 TextColor="UI_TextHoloBody" DT_CENTER="0" DT_VCENTER="1" RelativeToClient="1"
+                 LAnchorPoint="0" LAnchorOffset="10"
+                 TAnchorPoint="0" TAnchorOffset="36"
+                 RAnchorPoint="1" RAnchorOffset="0"
+                 BAnchorPoint="0" BAnchorOffset="64" />
+
+            <Control Class="Window" Sprite="BK3:UI_BK3_Holo_InsetSlider"
+                 Picture="1" IgnoreMouse="1" RelativeToClient="1"
+                 LAnchorPoint="0" LAnchorOffset="10"
+                 TAnchorPoint="0" TAnchorOffset="70"
+                 RAnchorPoint="1" RAnchorOffset="-10"
+                 BAnchorPoint="0" BAnchorOffset="100" />
+
+            <Control Class="SliderBar" Name="IntervalSlider" Template="Holo_Scrolllist_Options"
+                Min="100" Max="1000" TickAmount="50" UseButtons="1"
+                InstantMouseReact="0" RelativeToClient="1"
+                LAnchorPoint="0" LAnchorOffset="12"
+                TAnchorPoint="0" TAnchorOffset="67"
+                RAnchorPoint="1" RAnchorOffset="-12"
+                BAnchorPoint="0" BAnchorOffset="97">
+                <Event Name="SliderBarChanged" Function="OnSettingsChanged"/>
+            </Control>
+
+        </Control>
+
+        <Control Class="Window" Sprite="BK3:UI_BK3_Holo_InsetHeaderThin"
+            Picture="1" IgnoreMouse="1" RelativeToClient="1"
+            LAnchorPoint="0" LAnchorOffset="36"
+            TAnchorPoint="0" TAnchorOffset="190"
+            RAnchorPoint="1" RAnchorOffset="-36"
+            BAnchorPoint="0" BAnchorOffset="294">
+
+            <Control Class="Window" Text="Size" Font="CRB_Header11"
+                TextColor="UI_TextHoloTitle" DT_CENTER="0" DT_VCENTER="1" RelativeToClient="1"
+                LAnchorPoint="0" LAnchorOffset="10"
+                TAnchorPoint="0" TAnchorOffset="4"
+                RAnchorPoint="1" RAnchorOffset="0"
+                BAnchorPoint="0" BAnchorOffset="34" />
+
+            <Control Class="Window" Name="SizeValue" Font="CRB_Header11"
+                TextColor="UI_TextHoloTitle" DT_RIGHT="1" DT_VCENTER="1" RelativeToClient="1"
+                LAnchorPoint="0.5" LAnchorOffset="0"
+                TAnchorPoint="0" TAnchorOffset="4"
+                RAnchorPoint="1" RAnchorOffset="-10"
+                BAnchorPoint="0" BAnchorOffset="34" />
+
+            <Control Class="Window" Text="History size. Amount of latency points in graph."
+                TextColor="UI_TextHoloBody" DT_CENTER="0" DT_VCENTER="1" RelativeToClient="1"
+                LAnchorPoint="0" LAnchorOffset="10"
+                TAnchorPoint="0" TAnchorOffset="36"
+                RAnchorPoint="1" RAnchorOffset="0"
+                BAnchorPoint="0" BAnchorOffset="64" />
+
+            <Control Class="Window" Sprite="BK3:UI_BK3_Holo_InsetSlider"
+                Picture="1" IgnoreMouse="1" RelativeToClient="1"
+                LAnchorPoint="0" LAnchorOffset="10"
+                TAnchorPoint="0" TAnchorOffset="70"
+                RAnchorPoint="1" RAnchorOffset="-10"
+                BAnchorPoint="0" BAnchorOffset="100" />
+
+            <Control Class="SliderBar" Name="SizeSlider" Template="Holo_Scrolllist_Options"
+                Min="10" Max="100" TickAmount="5" UseButtons="1"
+                InstantMouseReact="0" RelativeToClient="1"
+                LAnchorPoint="0" LAnchorOffset="12"
+                TAnchorPoint="0" TAnchorOffset="67"
+                RAnchorPoint="1" RAnchorOffset="-12"
+                BAnchorPoint="0" BAnchorOffset="97">
+                <Event Name="SliderBarChanged" Function="OnSettingsChanged"/>
+            </Control>
+
+        </Control>
+
+        <Control Class="Window" Sprite="BK3:UI_BK3_Holo_InsetHeaderThin"
+            Picture="1" IgnoreMouse="1" RelativeToClient="1"
+            LAnchorPoint="0" LAnchorOffset="36"
+            TAnchorPoint="0" TAnchorOffset="298"
+            RAnchorPoint="1" RAnchorOffset="-36"
+            BAnchorPoint="0" BAnchorOffset="402">
+
+            <Control Class="Window" Text="Bad" Font="CRB_Header11"
+                TextColor="UI_TextHoloTitle" DT_CENTER="0" DT_VCENTER="1" RelativeToClient="1"
+                LAnchorPoint="0" LAnchorOffset="10"
+                TAnchorPoint="0" TAnchorOffset="4"
+                RAnchorPoint="1" RAnchorOffset="0"
+                BAnchorPoint="0" BAnchorOffset="34" />
+
+            <Control Class="Window" Name="BadValue" Font="CRB_Header11"
+                TextColor="UI_TextHoloTitle" DT_RIGHT="1" DT_VCENTER="1" RelativeToClient="1"
+                LAnchorPoint="0.5" LAnchorOffset="0"
+                TAnchorPoint="0" TAnchorOffset="4"
+                RAnchorPoint="1" RAnchorOffset="-10"
+                BAnchorPoint="0" BAnchorOffset="34" />
+
+            <Control Class="Window" Text="Maximum latency value considered as 'bad'."
+                TextColor="UI_TextHoloBody" DT_CENTER="0" DT_VCENTER="1" RelativeToClient="1"
+                LAnchorPoint="0" LAnchorOffset="10"
+                TAnchorPoint="0" TAnchorOffset="36"
+                RAnchorPoint="1" RAnchorOffset="0"
+                BAnchorPoint="0" BAnchorOffset="64" />
+
+            <Control Class="Window" Sprite="BK3:UI_BK3_Holo_InsetSlider"
+                Picture="1" IgnoreMouse="1" RelativeToClient="1"
+                LAnchorPoint="0" LAnchorOffset="10"
+                TAnchorPoint="0" TAnchorOffset="70"
+                RAnchorPoint="1" RAnchorOffset="-10"
+                BAnchorPoint="0" BAnchorOffset="100" />
+
+            <Control Class="SliderBar" Name="BadSlider" Template="Holo_Scrolllist_Options"
+                Min="50" Max="500" TickAmount="5" UseButtons="1"
+                InstantMouseReact="0" RelativeToClient="1"
+                LAnchorPoint="0" LAnchorOffset="12"
+                TAnchorPoint="0" TAnchorOffset="67"
+                RAnchorPoint="1" RAnchorOffset="-12"
+                BAnchorPoint="0" BAnchorOffset="97">
+                <Event Name="SliderBarChanged" Function="OnSettingsChanged"/>
+            </Control>
+
+        </Control>
+
+        <Control Class="Button" Base="CRB_Basekit:kitBtn_Close"
+            LAnchorPoint="1" LAnchorOffset="-51"
+            TAnchorPoint="0" TAnchorOffset="23"
+            RAnchorPoint="1" RAnchorOffset="-23"
+            BAnchorPoint="0" BAnchorOffset="54">
+            <Event Name="ButtonSignal" Function="OnSettingsCancel" />
+        </Control>
+
+        <Control Class="Window" Template="Metal_Primary_NoNav" Border="1" RelativeToClient="1"
+            LAnchorPoint="0" LAnchorOffset="0"
+            TAnchorPoint="0" TAnchorOffset="0"
+            RAnchorPoint="1" RAnchorOffset="0"
+            BAnchorPoint="1" BAnchorOffset="0" />
+
+        <Control Class="Window" Text="LagMeter Settings" Font="CRB_HeaderMedium" TextColor="UI_WindowTitleYellow"
+            DT_CENTER="1" DT_VCENTER="1" Sprite="BK3:sprMetal_Framing_Header" Picture="1" NewControlDepth="1"
+            RelativeToClient="1"
+            LAnchorPoint="0" LAnchorOffset="100"
+            TAnchorPoint="0" TAnchorOffset="28"
+            RAnchorPoint="1" RAnchorOffset="-100"
+            BAnchorPoint="0" BAnchorOffset="64" />
+
+    </Form>
+
+</Forms>

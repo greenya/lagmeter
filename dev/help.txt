@@ -1,0 +1,4 @@
+local trace = function (name, var)
+	local Rover = Apollo.GetAddon('Rover')
+    Rover:AddWatch('#### ' .. name, var)
+end
